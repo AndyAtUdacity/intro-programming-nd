@@ -2,7 +2,7 @@
 {% block content %}
 <h2>Student Notes</h2>
 <div class="indent">
-	<form action="add"><button class="add-button" href="add">Add Your Notes</button></form>
+	<form action="add"><button class="button-secondary" href="add">Add Your Notes</button></form>
 	{% for sub in submissions %}
 	<div class="row">
 		<div class="section" style="background-image: url({{ sub.image_url }})">

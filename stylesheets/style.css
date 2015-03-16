@@ -1,45 +1,157 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 body {
   font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
   line-height: 1.7;
   color: #303030;
+  max-width: 960px;
+  margin: 0 auto;
 }
-div.centered {
-	text-align: center;
+h1 {
+	font-size : 2em;
+	margin : 0;
 }
 h2 {
 	color: #294860;
 	background-color: #DDD;
 	padding-left: 10px;
+	font-weight : 1.8em;
+}
+h3 {
+	margin-top: 2px;
+}
+.row {
+	width : 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.right {
+	position: absolute;
+	right : 0;
+}
+.bottom {
+	position: absolute;
+	bottom:  0;
+}
+.left {
+	position: absolute;
+	left : 0;
+}
+.relative {
+	position: relative;
+}
+.one-quarter {
+	width : 25%;
+}
+.one-third {
+	width : 33.33%;
+}
+.half { 
+	width : 50%;
+}
+.two-third {
+	width : 66.66%;
+}
+.three-quarter {
+	width : 75%;
+}
+.full {
+	width : 100%;
+}
+.one-twelfth {
+	width : 8.33%;
+}
+.eleven-twelfth {
+	width : 91.66%;
+}
+.one-sixth {
+	width: 16.66%;
+	position: relative;
+	overflow: visible;
+}
+.five-sixth {
+	width: 83.33%;
+}
+.comfy {
+	padding : 4px;
+}
+.roomy {
+	padding : 16px 10px;
+}
+/*.side {
+	height : 100%;
+	position: relative;
+}*/
+.centered {
+	text-align: center;
+	margin : 0 auto;
+}
+
+.codepen-container {
+	background-color: #333;
+	border : 5px solid white;
+	/*padding: 8px;*/
+	color: white;
 }
 div.top-nav {
 	background-color: #294860;
 	color: white;
-	text-align: left;
-	padding: 10px;
-	position: relative;
-	width: 100%;
 }
+
+
+.bottom { 
+	position : absolute;
+	bottom : 0;
+}
+
+ul.top-links {
+	margin : 0;
+	display : inline-block;
+}
+
 .top-link {
 	display: inline-block;
 	float : right;
-	padding-right: 15px;
-	font-size : 18px;
-
+	padding-right: 5px;
+	padding-left : 10px;
+	font-size : 1em;
 }
+li.top-link {
+	position : relative;
+	text-decoration: none;
+}
+
 a.top-link {
 	color: rgba(255,255,255,0.5);
 	text-decoration: none;
-	position: relative;
+	/*position: relative;*/
 	float: left;
-	z-index: 100;
+
+}
+
+
+
+
+#top-image {
+	margin-right : 20px;
 }
 #home-link { 
-	width: 80px;
+	margin-top:5px;
+	margin-right : 0px;
+	padding-right : 0px;
 	text-align: center;
+	float: bottom;
+	display:block;
+	text-decoration: none;
+
 }
 div.section {
-	box-sizing: border-box;
 	background-size: cover;
 	background-position: center;
 	height: 290px;
@@ -81,8 +193,6 @@ h1.top-title {
 	bottom: -28px;
 	margin: 0;
 	margin-left: 20px;
-	height : 100%;
-	line-height: 100%;
 }
 .content {
 	padding: 0 10px;
@@ -140,7 +250,7 @@ input, textarea {
 	margin-bottom: 20px
 }
 
-.add-button {
+.button-secondary {
   background-image: linear-gradient(to bottom,#52b6ee 0,#409cd3 100%);
   background-repeat: repeat-x;
   background-color: #1199c3;

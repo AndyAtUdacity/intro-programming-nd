@@ -17,6 +17,12 @@ indexes:
   - name: votes
     direction: desc
 
+- kind: CodePenExample
+  ancestor: yes
+  properties:
+  - name: votes
+    direction: desc
+
 - kind: Submission
   ancestor: yes
   properties:

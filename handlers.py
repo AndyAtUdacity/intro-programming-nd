@@ -1,12 +1,17 @@
+# TODO : Add comments throughout
+# TODO : Minimize everything! LESS CODE, more abstraction
+# TODO : Change duplicate names! No lines of code that say examples=examples!
+# TODO : Change for loops to not ALL be `for element in elements` No Pluralization magic!
+
 import os
 import webapp2
 import jinja2
-from google.appengine.ext	import ndb
-from content import COURSES, THINKING, TOPICS, SECTIONS
+from urlparse import urlparse
+
+from content import COURSES, THINKING, TOPICS, SECTIONS, guestbook_key, Submission, code_examples_key, CodeExample, code_pen_key, CodePenExample, DEFAULT_GUESTBOOK_NAME, DEFAULT_CODE_EXAMPLES_NAME, DEFAULT_CODE_PEN_NAME
 import urllib
 
-DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
-DEFAULT_CODE_EXAMPLES_NAME = 'default_code_examples'
+
 template_dir = os.path.join(os.path.dirname(__file__), 'html_templates')
 jinja_env = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(template_dir),
@@ -71,18 +76,6 @@ class SubmissionHandler(Handler):
 		# query_params = {'guestbook_name' : guestbook_name}
 		self.redirect('/student_submissions/') # + urllib.urlencode(query_params))
 
-def guestbook_key(guestbook_name=DEFAULT_GUESTBOOK_NAME):
-	return ndb.Key('Guestbook', guestbook_name)
-
-class Submission(ndb.Model):
-  """A main model for representing an individual Guestbook entry."""
-  # author = ndb.StructuredProperty(Author)
-  link = ndb.StringProperty(indexed=False)
-  description = ndb.StringProperty(indexed=False)
-  date = ndb.DateTimeProperty(auto_now_add=True)
-  image_url = ndb.StringProperty(indexed=False)
-  name = ndb.StringProperty(indexed=False)
-
 class CodeExampleListHandler(Handler):
 	def get(self, language):
 		code_examples_name = self.request.get('code_examples_name', DEFAULT_CODE_EXAMPLES_NAME)
@@ -101,17 +94,97 @@ class CodeExampleHandler(Handler):
 		example.language = language.lower()
 		example.title = self.request.get('title')
 		example.description= self.request.get('description')
+		
 		example.url = self.request.get('url')
 		example.put()
 		self.redirect('/example_code/%s/' % language)
+	
 
-def code_examples_key(code_examples_name = DEFAULT_CODE_EXAMPLES_NAME):
-	return ndb.Key('Code Examples', code_examples_name)
+class CodePenExampleListHandler(Handler):
+	def get(self, levels=CodePenExample.available_levels, available_levels=CodePenExample.available_levels, error=False):
+		code_pen_name = self.request.get('code_pen_name', DEFAULT_CODE_PEN_NAME)
+		examples_query = CodePenExample.query(
+			# CodePenExample.level in levels,
+			ancestor=code_pen_key(code_pen_name)).order(-CodePenExample.votes)
+		examples = examples_query.fetch(10)
+		self.render('code_pen_examples.html', examples=examples, levels=levels, page_name="codepen", available_levels=available_levels)
+	def post(self):
+		code_pen_name = self.request.get('code_pen_name', DEFAULT_CODE_PEN_NAME)
+		pen = CodePenExample(parent=code_pen_key(code_pen_name))
 
-class CodeExample(ndb.Model):
-	language = ndb.StringProperty(required=True, choices=["html", "css", "python", "other"])
-	votes = ndb.IntegerProperty(default=0)
-	date = ndb.DateTimeProperty(auto_now_add=True)
-	title = ndb.StringProperty(required=True)
-	description = ndb.StringProperty()
-	url = ndb.StringProperty(required=True)
+		pen.level = self.request.get('level')
+		pen.title = self.request.get('title')
+		pen.description= self.request.get('description')
+		input_url = self.request.get('url')
+		url_info = self.get_user_name_and_pen_id(input_url)
+		if url_info['valid_url']:
+			pen.user_name = url_info['user_name']
+			pen.code_pen_id = url_info['code_pen_id']
+			pen.put()
+			self.redirect('/code_pen_examples/')
+		else:
+			self.get(error=url_info['error_message'])
+	def get_user_name_and_pen_id(self, input_url):
+	    try:
+	        url_pieces = urlparse(input_url)
+	        
+	        scheme = url_pieces.scheme
+	        if scheme != 'http':
+	            return {'valid_url': False,
+	                    'error_message' : 'Your link should begin with http://'}
+	        
+	        host = url_pieces.netloc
+	        if host != 'codepen.io':
+	            return {'valid_url': False,
+	                    'error_message': 'The link you submitted is not to codepen.io'}
+	        
+	        path = url_pieces.path
+	        path_segments = path.split('/')
+	        if len(path_segments) != 4:
+	            return {'valid_url' : False,
+	                    'error_message' : 'That URL does not go to a pen in codepen.'}
+	        
+	        user_name   = path_segments[1]
+	        code_pen_id = path_segments[3]
+	        return {'user_name'   : user_name,
+	                'code_pen_id' : code_pen_id,
+	                'valid_url'   : True}
+	    except:
+	        return {'valid_url'     : False,
+	                'error_message' : "That isn't a valid codepen URL. Make sure to copy and paste your URL from codepen exactly."}
+
+		# self.redirect('/example_code/')
+
+# class CodePenExampleHandler(Handler):
+# 	def get(self):
+# 		self.render('add_example.html', page_name="example code")
+# 	def post(self, language):
+# 		code_pen_name = self.request.get('code_pen_name', DEFAULT_CODE_PEN_NAME)
+# 		pen = CodeExample(parent=code_pen_key(code_pen_name))
+# 		pen.language = language.lower()
+# 		pen.title = self.request.get('title')
+# 		pen.description= self.request.get('description')
+# 		pen.url = self.request.get('url')
+# 		pen.put()
+# 		self.redirect('/example_code/%s/' % language)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
