@@ -342,6 +342,15 @@ TOPICS = [
 					 "problems."),
 	"resources" : [
 		{
+		"title" : "Learn Python the Hard Way",
+		"url" : "http://learnpythonthehardway.org/book/",
+		"description" : ("This is a free online book by Zed Shaw. It's written "
+						 "for novice programmers looking to learn Python. It's "
+						 "organized by topic and has very good explanations and example "
+						 "code throughout. Each section ends with helpful 'Study Drills.' "
+						 "Highly recommended resource.")
+		},
+		{
 		"title" : "Project Euler",
 		"url" : "https://projecteuler.net/",
 		"description" : ("This site provides a lot of highly mathematical "
@@ -361,6 +370,72 @@ TOPICS = [
 		"description" : ("The organization that manages the Python language also "
 						 "maintains a list of practice resources as well. Some are "
 						 "better than others.")
+		}]},
+	{"title" : 'Python "Web Frameworks"',
+	"description" : ("A 'Web Framework' is a tool that facilitates the development "
+		"of web applications. In Course 4, we used Google AppEngine to build our "
+		"web app. The frameworks listed here can make it even easier to build large web "
+		"applications by taking care of a lot of the necessary details for you."),
+	"resources" : [
+		{
+		"title" : "Flask",
+		"url" : "http://flask.pocoo.org/",
+		"description" : ("The Django homepage says: \n\n"
+			"Flask is a 'microframework'. It's simple to learn, easy to understand, and "
+			"well-documented. It's great for small to medium sized projects.")
+		},
+		{
+		"title" : "Django",
+		"url" : "https://www.djangoproject.com/",
+		"description" : ("The Django homepage says: \n\n"
+			"Django is a high-level Python Web framework that encourages rapid "
+			"development and clean, pragmatic design. Built by experienced developers, "
+			"it takes care of much of the hassle of Web development, so you can focus on "
+			"writing your app without needing to reinvent the wheel. It's free and open source.")
+		},
+		{
+		"title" : "Flask vs. Django (Quora thread)",
+		"url" : "http://www.quora.com/Should-I-learn-Flask-or-Django",
+		"description" : ("Flask and Django are both very popular. This thread has "
+			"some great discussion about the pros and cons of each. Summary: Django has more "
+			"features, but Flask is easier to learn.")
+		}
+	]},
+	{"title" : 'Other Nanodegrees',
+	"description" : ("Once you've completed the Intro Programming Nanodegree, you'll "
+		"be ready to take most (if not all) of Udacity's other Nanodegrees (which can "
+		"actually prepare you for a job in programming)."),
+	"resources" : [
+		{
+		"title" : "Front-End Web Developer Nanodegree",
+		"url" : "https://www.udacity.com/course/nd001",
+		"description" : ("In this Nanodegree you'll get a deeper understanding HTML and "
+			"CSS and will develop ability with JavaScript, the third language of web development. "
+			"You'll learn to build beautiful, responsive websites optimized for security and "
+			"performance. You'll build six portfolio-worthy projects and learn how to do well "
+			"in a programming job interview.")
+		},
+		{
+		"title" : "iOS Developer Nanodegree",
+		"url" : "https://www.udacity.com/course/nd003",
+		"description" : ("iOS is the operating system used on iPhones and iPads. In this "
+			"Nanodegree you learn the skills required to become an iOS "
+			"Developer. Developing mobile apps can be a lot of fun (and often easier than web "
+			"development in many ways). It can also be very lucrative: since iOS developers are in high "
+		  "demand, there are many jobs available in the field. But it's also possible to make highly "
+		  "successful apps on your own. In this Nanodegree program, you'll build five portfolio-worthy "
+		  "iOS apps that demonstrate your expertise as an iOS Developer. You'll write all of these apps "
+		  "in Swift, Apple's custom programming language developed specifically for building iOS and OS X apps.")
+		},
+		{
+		"title" : "Full Stack Web Developer Nanodegree",
+		"url" : "https://www.udacity.com/course/nd004",
+		"description" : ("This Nanodegree program prepares you for a job as a Full Stack Web Developer. "
+			"Participants in the program will learn to build complex server-side web applications that "
+			"make use of powerful relational databases to persistently store data. You'll then learn how "
+			"to secure and configure your very own Linux-based server to host your applications. Finally, "
+			"you'll explore the challenges in horizontally scaling an application to support thousands of "
+			"users with a cloud-based application hosting provider.")
 		}
 	]}]
 SECTIONS = [
