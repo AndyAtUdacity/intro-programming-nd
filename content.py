@@ -401,7 +401,7 @@ TOPICS = [
 			"features, but Flask is easier to learn.")
 		}
 	]},
-	{"title" : 'Other Nanodegrees',
+	{"title" : 'Other Udacity Nanodegrees',
 	"description" : ("Once you've completed the Intro Programming Nanodegree, you'll "
 		"be ready to take most (if not all) of Udacity's other Nanodegrees (which can "
 		"actually prepare you for a job in programming)."),

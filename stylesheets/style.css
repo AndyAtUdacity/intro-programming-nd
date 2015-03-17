@@ -4,6 +4,21 @@
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 }
+a {
+	color : #1199c3;
+	text-decoration: none;
+}
+ul {
+	list-style-type: none;
+}
+li.table-of-contents {
+	margin : 20px 0;
+}
+.toc-entry {
+	font-size: 1.2em;
+	margin : 5px;
+	margin-left : 0px;
+}
 .no-style-button {
 	border : 0;
 	background-color : transparent;
