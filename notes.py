@@ -3,9 +3,8 @@ import cgi
 from handlers import *
 
 application = webapp2.WSGIApplication([
-	(r'/example_code/([a-zA-Z]+)/add', CodeExampleHandler),
-	(r'/example_code/([a-zA-Z]+)/', CodeExampleListHandler),
 	('/code_pen_examples/', CodePenExampleListHandler),
+	('/code_pen_examples/vote', CodePenVoteHandler),
 	('/additional_resources/', ResourcesHandler),
 	('/nanodegree_notes/', NanodegreeHandler),
 	('/thinking_like_a_programmer/', ThinkingHandler),

@@ -8,7 +8,7 @@ import webapp2
 import jinja2
 from urlparse import urlparse
 
-from content import COURSES, THINKING, TOPICS, SECTIONS, guestbook_key, Submission, code_examples_key, CodeExample, code_pen_key, CodePenExample, DEFAULT_GUESTBOOK_NAME, DEFAULT_CODE_EXAMPLES_NAME, DEFAULT_CODE_PEN_NAME
+from content import COURSES, TOPICS, SECTIONS, guestbook_key, Submission, code_examples_key, CodeExample, code_pen_key, CodePenExample, DEFAULT_GUESTBOOK_NAME, DEFAULT_CODE_EXAMPLES_NAME, DEFAULT_CODE_PEN_NAME
 import urllib
 
 
@@ -62,6 +62,23 @@ class SubmissionListHandler(Handler):
 		submissions = submissions_query.fetch(10)
 		self.render('guestbook.html', submissions=submissions, page_name="submissions")
 
+class CodePenVoteHandler(Handler):
+	def post(self):
+		code_pen_name = self.request.get('code_pen_name', DEFAULT_CODE_PEN_NAME)
+		code_pen_id = self.request.get('vote_up')
+		code_pen_query = CodePenExample.query(
+			CodePenExample.code_pen_id == code_pen_id,
+			ancestor=code_pen_key(code_pen_name))
+		code_pens = code_pen_query.fetch()
+		code_pen=code_pens[0]
+		code_pen.votes = code_pen.votes + 1
+		print
+		print code_pen
+		print
+		print "VOTES = %i" % code_pen.votes
+		code_pen.put()
+		self.redirect('/code_pen_examples/')
+
 class SubmissionHandler(Handler):
 	def get(self):
 		self.render('add_submission.html', page_name="submissions" )
@@ -75,30 +92,6 @@ class SubmissionHandler(Handler):
 		submission.put()
 		# query_params = {'guestbook_name' : guestbook_name}
 		self.redirect('/student_submissions/') # + urllib.urlencode(query_params))
-
-class CodeExampleListHandler(Handler):
-	def get(self, language):
-		code_examples_name = self.request.get('code_examples_name', DEFAULT_CODE_EXAMPLES_NAME)
-		examples_query = CodeExample.query(
-			CodeExample.language == language.lower(),
-			ancestor=code_examples_key(code_examples_name)).order(-CodeExample.votes)
-		examples = examples_query.fetch(10)
-		self.render('example_code.html', examples=examples, language=language, page_name="example code")
-
-class CodeExampleHandler(Handler):
-	def get(self, language):
-		self.render('add_example.html', language=language.lower(), page_name="example code")
-	def post(self, language):
-		code_examples_name = self.request.get('code_examples_name', DEFAULT_CODE_EXAMPLES_NAME)
-		example = CodeExample(parent=code_examples_key(code_examples_name))
-		example.language = language.lower()
-		example.title = self.request.get('title')
-		example.description= self.request.get('description')
-		
-		example.url = self.request.get('url')
-		example.put()
-		self.redirect('/example_code/%s/' % language)
-	
 
 class CodePenExampleListHandler(Handler):
 	def get(self, levels=CodePenExample.available_levels, available_levels=CodePenExample.available_levels, error=False):
@@ -127,23 +120,23 @@ class CodePenExampleListHandler(Handler):
 	def get_user_name_and_pen_id(self, input_url):
 	    try:
 	        url_pieces = urlparse(input_url)
-	        
+
 	        scheme = url_pieces.scheme
 	        if scheme != 'http':
 	            return {'valid_url': False,
 	                    'error_message' : 'Your link should begin with http://'}
-	        
+
 	        host = url_pieces.netloc
 	        if host != 'codepen.io':
 	            return {'valid_url': False,
 	                    'error_message': 'The link you submitted is not to codepen.io'}
-	        
+
 	        path = url_pieces.path
 	        path_segments = path.split('/')
 	        if len(path_segments) != 4:
 	            return {'valid_url' : False,
 	                    'error_message' : 'That URL does not go to a pen in codepen.'}
-	        
+
 	        user_name   = path_segments[1]
 	        code_pen_id = path_segments[3]
 	        return {'user_name'   : user_name,

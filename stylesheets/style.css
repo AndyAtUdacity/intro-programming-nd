@@ -4,6 +4,11 @@
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.no-style-button {
+	border : 0;
+	background-color : transparent;
+	cursor: pointer;
+}
 
 body {
   font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -52,7 +57,7 @@ h3 {
 .one-third {
 	width : 33.33%;
 }
-.half { 
+.half {
 	width : 50%;
 }
 .two-third {
@@ -105,7 +110,7 @@ div.top-nav {
 }
 
 
-.bottom { 
+.bottom {
 	position : absolute;
 	bottom : 0;
 }
@@ -141,7 +146,7 @@ a.top-link {
 #top-image {
 	margin-right : 20px;
 }
-#home-link { 
+#home-link {
 	margin-top:5px;
 	margin-right : 0px;
 	padding-right : 0px;

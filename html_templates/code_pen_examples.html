@@ -3,13 +3,26 @@
 <h2>Codepen Examples</h2>
 
 {% for ex in examples %}
+<div class="row indent">
+	<div class="three-quarter">
+		<h3>{{ ex.title }}</h3>
+	</div>
+	<div class="one-quarter relative">
+		<div class="right">
+			<form action="vote" method="post" value="1">
+				<button class="no-style-button" name="vote_up" value="{{ex.code_pen_id}}" type="submit" style="border:0;"><img style="height: 2em;" src="/images/empty_heart.svg"></button>
+			</form>
+			 <span style="font-size: 1.5em;">{{ex.votes}} Votes</span>
+		</div>
+	</div>
+</div>
 <div class="row codepen-container">
 	<div class="one-third indent">
-		<h3>{{ ex.title }}</h3>
-		<div class="full ">
+
+		<!-- <div class="full"> -->
 			<!-- <span><b>{{ ex.level|capitalize() }}</b></span> -->
-			<!-- <span class="votes">{{ ex.votes }}</span> -->
-		</div>
+
+<!-- 		</div> -->
 		<div class="full">
 			<p>{{ ex.description }}</p>
 		</div>
@@ -22,40 +35,51 @@
 	<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 </div>
 {% endfor %}
+
+<!-- Below here is the "add your own example" code -->
+
 <h2>Add your own Example</h2>
+<p class="indent">A good example should demonstrate <b>one</b> idea in HTML / CSS and should have as little code as necessary to demonstrate that idea clearly.</p>
 <div class="row">
-<form method="post">
-	<div class="row">
-		<div class="two-third roomy">
-			<div class="form-element">
-				<label for="title">Codepen Title</label><br>
-				<input type="text" name="title" size="40" required></input>
+	<form method="post">
+		<div class="row">
+			<div class="half roomy">
+				<div class="form-element">
+					<label for="title">Codepen Title</label><br>
+					<input type="text" name="title" size="30" maxlength="60" required></input>
+				</div>
+				<div class="form-element">
+					<label for="url">Codepen URL</label><br>
+					<input type="url" name="url" size="30" placeholder="http://codepen.io/Andy/pen/LEjyPO"></input>
+				</div>
 			</div>
-			<div class="form-element">
-				<label for="description">Description</label><br>
-				<textarea name="description" cols="38" rows="5" maxlength="200" required></textarea>
-			</div>
-			<div class="form-element">
-				<label for="url">Codepen URL</label><br>
-				<input type="url" name="url" size="40" placeholder="http://codepen.io/AndyAtUdacity/pen/LEjyPO"></input>
+			<div class="half roomy">
+
+				{% if available_levels|length > 0 %}
+				<div class="form-element">
+					<label for="level">Expertise Level</label>
+					{% for l in available_levels %}
+						<br><input type="radio" name="level" value="{{ l }}"> {{ l|capitalize() }}</input>
+					{% endfor %}
+				</div>
+				{% endif %}
+
 			</div>
 		</div>
-		<div class="one-third roomy">
-			{% if available_levels|length > 0 %}
-			<div class="form-element">
-				<label for="level">Expertise Level</label>
-				{% for l in available_levels %}
-					<br><input type="radio" name="level" value="{{ l }}"> {{ l|capitalize() }}</input>
-				{% endfor %}
+		<div class="row">
+			<div class="full roomy">
+				<div class="form-element">
+					<label for="description">Description</label><br>
+					Give your example a brief description of what it demonstrates.<br>
+					<textarea name="description" cols="50" rows="3" maxlength="200" required></textarea>
+				</div>
+				<div class="form-element">
+					<input type="submit" class="button-primary" value="Add Example"></input>
+				</div>
 			</div>
-			{% endif %}
-			
 		</div>
-	</div>
-	<div class="form-element">
-				<input type="submit" class="button-primary" value="Add Example"></input>
-			</div>
-</form>
+
+	</form>
 </div>
 
 

@@ -246,67 +246,67 @@ COURSES = [
 		]
 	}
 	]
-THINKING = [
-	{"title" : "Abstract Thinking",
-		"description" : ("Abstract thinking means finding similarity, or as "
-						 "programmers would say, generality amongst seemingly "
-						 "different things."),
-		"examples" : [
-			{"title" : "title-1",
-			 "description" : "description-1"},
-			{"title" : "title-2",
-			 "description" : "description-2"}
-		]
-	},
-	{"title" : "Procedural Thinking",
-		"description" : ("Procedural thinking involves creating perfectly "
-						 "clear and unambiguous instructions for a computer "
-						 "to follow."),
-		"examples" : [
-			{"title" : "title-1",
-			 "description" : "description-1"},
-			{"title" : "title-2",
-			 "description" : "description-2"}
-		]
-	},
-	{"title" : "Systems Thinking",
-		"description" : ("Systems thinking happens when you break a big "
-						 "problem down into smaller pieces. Programmers do "
-						 "this when they create a plan (often on paper) for "
-						 "how a program will work. It involves big-picture "
-						 "thinking and decision-making about a problem and "
-						 "how different pieces of a program can work together "
-						 "to solve it."),
-		"examples" : [
-			{"title" : "title-1",
-			 "description" : "description-1"},
-			{"title" : "title-2",
-			 "description" : "description-2"}
-		]
-	},
-	{"title" : "Debugging",
-		"description" : ("Debugging is a systematic process of relentlessly "
-						 "identifying the cause of a computer program that "
-						 "doesn't work."),
-		"examples" : [
-			{"title" : "title-1",
-			 "description" : "description-1"},
-			{"title" : "title-2",
-			 "description" : "description-2"}
-		]
-	},
-	{"title" : "Technical Empathy",
-		"description" : ("'Technological empathy' comes in many forms. For "
-						 "example, computer empathy is the ability to "
-						 "understand what a computer is, how it works, and "
-						 "what it's good and bad at doing."),
-		"examples" : [
-			{"title" : "title-1",
-			 "description" : "description-1"},
-			{"title" : "title-2",
-			 "description" : "description-2"}
-		]
-	}]
+# THINKING = [
+# 	{"title" : "Abstract Thinking",
+# 		"description" : ("Abstract thinking means finding similarity, or as "
+# 						 "programmers would say, generality amongst seemingly "
+# 						 "different things."),
+# 		"examples" : [
+# 			{"title" : "title-1",
+# 			 "description" : "description-1"},
+# 			{"title" : "title-2",
+# 			 "description" : "description-2"}
+# 		]
+# 	},
+# 	{"title" : "Procedural Thinking",
+# 		"description" : ("Procedural thinking involves creating perfectly "
+# 						 "clear and unambiguous instructions for a computer "
+# 						 "to follow."),
+# 		"examples" : [
+# 			{"title" : "title-1",
+# 			 "description" : "description-1"},
+# 			{"title" : "title-2",
+# 			 "description" : "description-2"}
+# 		]
+# 	},
+# 	{"title" : "Systems Thinking",
+# 		"description" : ("Systems thinking happens when you break a big "
+# 						 "problem down into smaller pieces. Programmers do "
+# 						 "this when they create a plan (often on paper) for "
+# 						 "how a program will work. It involves big-picture "
+# 						 "thinking and decision-making about a problem and "
+# 						 "how different pieces of a program can work together "
+# 						 "to solve it."),
+# 		"examples" : [
+# 			{"title" : "title-1",
+# 			 "description" : "description-1"},
+# 			{"title" : "title-2",
+# 			 "description" : "description-2"}
+# 		]
+# 	},
+# 	{"title" : "Debugging",
+# 		"description" : ("Debugging is a systematic process of relentlessly "
+# 						 "identifying the cause of a computer program that "
+# 						 "doesn't work."),
+# 		"examples" : [
+# 			{"title" : "title-1",
+# 			 "description" : "description-1"},
+# 			{"title" : "title-2",
+# 			 "description" : "description-2"}
+# 		]
+# 	},
+# 	{"title" : "Technical Empathy",
+# 		"description" : ("'Technological empathy' comes in many forms. For "
+# 						 "example, computer empathy is the ability to "
+# 						 "understand what a computer is, how it works, and "
+# 						 "what it's good and bad at doing."),
+# 		"examples" : [
+# 			{"title" : "title-1",
+# 			 "description" : "description-1"},
+# 			{"title" : "title-2",
+# 			 "description" : "description-2"}
+# 		]
+# 	}]
 TOPICS = [
 	{"title" : "CSS Positioning and Sizing",
 	"description" : ("I really struggled with getting my HTML to "
@@ -367,7 +367,7 @@ SECTIONS = [
 	{"title"     : "Andy's Course Notes",
 	 "image_url" : "/images/computer_notes.jpg",
 	 "href"      : "nanodegree_notes/",
-	 "short_title":"Andy's Notes",
+	 "short_title":"Notes",
 	 "id"        : "notes"
 	},
 	{"title"     : "Student Projects",
@@ -382,16 +382,16 @@ SECTIONS = [
 	 "short_title":"Resources",
 	 "id"        : "resources"
 	},
-	{"title"     : "Thinking Like a Programmer",
-	 "image_url" : "/images/blueprint.jpg",
-	 "href"      : "thinking_like_a_programmer/",
-	 "short_title":"Thinking",
-	 "id"        : "thinking"
-	},
+	# {"title"     : "Thinking Like a Programmer",
+	#  "image_url" : "/images/blueprint.jpg",
+	#  "href"      : "thinking_like_a_programmer/",
+	#  "short_title":"Thinking",
+	#  "id"        : "thinking"
+	# },
 	{"title"     : "Codepen Examples",
 	 "image_url" : "/images/pen.jpg",
 	 "href"      : "code_pen_examples/",
-	 "short_title":"Example Code",
+	 "short_title":"Codepens",
 	 "id"        : "codepen"
 	}]
 def guestbook_key(guestbook_name=DEFAULT_GUESTBOOK_NAME):
@@ -416,6 +416,8 @@ class CodeExample(ndb.Model):
 	title = ndb.StringProperty(required=True)
 	description = ndb.StringProperty()
 	url = ndb.StringProperty(required=True)
+	def vote(self):
+		self.votes = self.votes + 1
 
 def code_pen_key(code_pen_name = DEFAULT_CODE_PEN_NAME):
 	return ndb.Key('Code Pen Examples', code_pen_name)
@@ -429,3 +431,9 @@ class CodePenExample(ndb.Model):
 	user_name = ndb.StringProperty(required=True)
 	code_pen_id = ndb.StringProperty(required=True)
 	level = ndb.StringProperty(required=True, choices=available_levels)
+
+
+
+
+
+
