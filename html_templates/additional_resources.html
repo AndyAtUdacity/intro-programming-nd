@@ -7,13 +7,13 @@
 {% for t in topics %}
 	<li class="table-of-contents">
 		<a class="toc-entry" href="#topic-{{ loop.index }}">{{ t.title }}</a>
-		<div class="row">
+		<!-- <div class="row">
 		{% for r in t.resources %}
 			<div class="one-third comfy" style="margin-bottom: 5px">
 				{{ r.title }}
 			</div>
 		{% endfor %}
-		</div>
+		</div> -->
 	</li>
 {% endfor %}
 </ul>

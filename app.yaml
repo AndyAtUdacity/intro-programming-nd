@@ -1,4 +1,4 @@
-application: ipnd-notes
+application: andy-brown-ipnd-notes
 version: 1
 runtime: python27
 api_version: 1
@@ -7,8 +7,10 @@ threadsafe: true
 handlers:
 - url: /stylesheets
   static_dir: stylesheets
+  #application_readable: true
 - url: /images
   static_dir: images
+  #application_readable: true
 - url: /templates
   static_dir: html_templates
   application_readable: true

@@ -13,6 +13,7 @@ import urllib
 
 
 template_dir = os.path.join(os.path.dirname(__file__), 'html_templates')
+#template_dir = '/html_templates'
 jinja_env = jinja2.Environment(
 	loader = jinja2.FileSystemLoader(template_dir),
 	extensions=['jinja2.ext.autoescape'],
@@ -32,7 +33,7 @@ class Handler(webapp2.RequestHandler):
 
 class MainPage(Handler):
 	def get(self):
-		self.render("main_page.html", page_name="home")
+		self.render("/main_page.html", page_name="home")
 
 class NanodegreeHandler(Handler):
 	def get(self):
@@ -73,9 +74,10 @@ class CodePenVoteHandler(Handler):
 		code_pen=code_pens[0]
 		code_pen.votes = code_pen.votes + 1
 		print
-		print code_pen
+		print self.request
 		print
-		print "VOTES = %i" % code_pen.votes
+		print self.request.remote_addr
+		print
 		code_pen.put()
 		self.redirect('/code_pen_examples/')
 
