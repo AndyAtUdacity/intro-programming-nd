@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 {% autoescape true %}
 <html>
+
 	<head>
 		<title>
 			Andy Brown's IPND Notes
 		</title>
 		<style>
+			/* TODO : default page_name to home */
 			#{{ page_name }}-link {
 				color: rgba(255,255,255,1.0);
 			}
 		</style>
-		<link rel="stylesheet" href="/stylesheets/style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/stylesheets/structure.css">
+		<link rel="stylesheet" href="/stylesheets/base_skin.css">
+		{% if page_name %}
+		<link rel="stylesheet" href="/stylesheets/{{ page_name }}_skin.css">
+		{% endif %}
 	</head>
-	<body>
-		<div class="roomy row top-nav">
-			<div class="one-quarter">
-				<img id="top-image" src="/images/andy.png">
-			</div>
-			<div class="three-quarter">
-				<h1>Andy Brown's IPND Notes</h1>
-			</div>
-		</div>
-		<div class="roomy row top-nav relative">
-			<a id="home" class="top-link bottom left"  href="/">Home</a>
-			<ul class="top-links bottom right">
-			{% for s in sections %}
-				<li class="top-link">
-					<a class="top-link " href="/{{ s.href }}" id="{{ s.id }}-link">
-						{{ s.short_title }}
-					</a>
-				</li>
-			{% endfor %}
-			</ul>
-		</div>
-		<div class="content">
-			{% block content %}
-			{% endblock %}
-		</div>
-		<div class="row footer roomy centered">
 
-			<h1 class="centered">Want to learn to code?</h1>
-			<div class="full relative roomy">
-				<form class="centered" action="https://www.udacity.com/course/nd000">
-		    		<input class="button-primary" type="submit" value="Take the Nanodegree!">
-				</form>
+	<body>
+		<div class="row header">
+			<div class="col-12">
+				<img class="top-image" src="/images/andy.png">
+				<h1 class="page-title">Andy Brown's IPND Notes</h1>
 			</div>
+			<div class="col-12 nav nav-top">
+				<ul class="nav-list">
+					<li class="nav-item nav-item-left"><a id="home-link" href="/">Home</a></li>
+					{% for s in sections %}
+					<li class="nav-item nav-item-right"><a href="/{{ s.href }}" id="{{ s.id }}-link">{{ s.short_title }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		{% block content %}
+		{% endblock %}
+		<div class="row footer">
+			<h1 class="take-nanodegree">Want to learn to code?</h1>
+			<form class="take-nanodegree" action="https://www.udacity.com/course/nd000">
+				<button class="button-primary">Take the Nanodegree!</button>
+			</form>
 		</div>
 	</body>
 

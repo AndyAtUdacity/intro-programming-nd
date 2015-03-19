@@ -2,21 +2,19 @@
 {% block content %}
 
 
-<h2>Additional Resources</h2>
-<ul class="table-of-contents">
+<h1 class="title">Additional Resources</h2>
+<!-- <ul class="table-of-contents"> -->
+<div class="row">
 {% for t in topics %}
-	<li class="table-of-contents">
+	<!-- <li class="table-of-contents-entry">
 		<a class="toc-entry" href="#topic-{{ loop.index }}">{{ t.title }}</a>
-		<!-- <div class="row">
-		{% for r in t.resources %}
-			<div class="one-third comfy" style="margin-bottom: 5px">
-				{{ r.title }}
-			</div>
-		{% endfor %}
-		</div> -->
-	</li>
+	</li> -->
+	<div class="entry-box">
+		<a class="entry" href="#topic-{{ loop.index }}">{{ t.title }}</a>
+	</div>
 {% endfor %}
-</ul>
+</div>
+<!-- </ul> -->
 
 
 
@@ -25,12 +23,13 @@
 	<h2 id="topic-{{ loop.index }}">{{ t.title }}</h2>
 	<div class="indent">
 		<p>{{ t.description }}</p>
-		<ul>
+		<ul class="resource-list">
 		{% for r in t.resources %}
-			<li>
+			<li class="resource-list-item">
 				<a href="{{ r.url }}" target="_blank">
 					{{ r.title }}
-				</a>: {{ r.description }}
+				</a>
+				<p class="res">{{ r.description }}</p>
 			</li>
 		{% endfor %}
 		</ul>

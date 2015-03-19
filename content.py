@@ -439,19 +439,19 @@ TOPICS = [
 		}
 	]}]
 SECTIONS = [
-	{"title"     : "Andy's Course Notes",
+	{"title"     : "Andy's Notes",
 	 "image_url" : "/images/computer_notes.jpg",
 	 "href"      : "nanodegree_notes/",
 	 "short_title":"Notes",
 	 "id"        : "notes"
 	},
-	{"title"     : "Student Projects",
+	{"title"     : "Student Notes",
 	 "image_url" : "/images/colored_papers.jpg",
 	 "href"      : "student_submissions/",
 	 "short_title":"Projects",
 	 "id"        : "submissions"
 	},
-	{"title"     : "Additional Resources",
+	{"title"     : "More Resources",
 	 "image_url" : "/images/tools.jpg",
 	 "href"      : "additional_resources/",
 	 "short_title":"Resources",
