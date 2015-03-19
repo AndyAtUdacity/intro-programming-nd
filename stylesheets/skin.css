@@ -8,11 +8,12 @@ body {
   margin: 0 auto;
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:750px) {
 	body {
 		font-size : 16px;
 	}
 }
+
 @media screen and (max-width:580px) {
 	body {
 		font-size : 14px;
@@ -21,6 +22,7 @@ body {
 		display: none;
 	}
 }
+
 @media screen and (max-width:460px) {
 	body {
 		font-size : 12px;
@@ -31,21 +33,86 @@ a {
 	color : #1199c3;
 	text-decoration: none;
 }
+
 a:hover {
 	color: #307699;
 }
 
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
+h1, h2 {
+	color : #294860;
+}
+/* I decided to use a generic idea of "sections" 
+throughout all pages. Initially I was individually styling
+the "topic" sections on the resource pages AND the "course" 
+sections on the notes page. But I realized I wanted them to 
+look the same so I generalized.*/
+.section-title {
+	color : #294860;
+	border-left : white solid 0.4em;
+	margin : 0.5em 0;
+	background-color: #DDD;
+	padding: 0.2em 0.4em;
+}
+
+.section,
+.section ul, 
+.section ol {
+	padding-left: 0.4em;
+}
+
+.section li {
+	margin-bottom: 1em;
+}
+
+.section p {
+	margin : 0;
+	margin-left: 0.4em;
+	font-size: 1.1em;
+}
+
+.section li p {
+	font-size: 1em;
+}
+
+
+/* I wanted all "table-of-contents" sections to look
+the same. */
+
+.table-of-contents-entry {
+	min-width : 50%;
+	padding: 0.4em;
+}
+
+.item-title {
+	font-size : 1.2em;
+}
+
+.header .page-title,
+.footer .take-nanodegree {
+	color: white;
+}
+
+.section h3 {
+	text-align: center;
+}
+
+.section-title h2 {
+	margin : 0;
+}
+
+.section ul,
+.section ol {
+	list-style-type: none;
 }
 
 .header,
 .footer {
 	background-color: #294860;
 	color: white;
+}
+
+.title {
+	padding-left: 0.2em;
 }
 
 .footer {

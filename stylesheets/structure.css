@@ -4,7 +4,11 @@
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 }
-img, embed, object, video {
+img, 
+embed, 
+object, 
+video, 
+.video {
 	max-width : 100%;
 }
 .nav a, button {

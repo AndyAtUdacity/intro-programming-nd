@@ -1,53 +1,9 @@
-li.table-of-contents {
-	margin : 20px 0;
-}
 
-.title {
-	padding-left: 0.2em;
-}
 
-.table-of-contents,
-.resource-list,
-.topic {
-	padding-left : 0.4em;
-}
 
-.table-of-contents,
-.resource-list {
-	list-style-type: none;
-}
 
-.resource-list-item,
-.table-of-contents-entry {
-	padding : 0.7em;
-}
 
-.entry-box {
-	min-width : 50%;
-	padding: 0.4em;
-}
 
-.entry-box a {
-	font-size: 1.4em;
-}
 
-.table-of-contents-entry {
-	display: inline-block;
-	min-width: 50%;
-	margin:0;
-}
 
-.resource-list-item a,
-.table-of-contents a {
-	font-size : 1.2em;
-}
 
-.resource-list-item p {
-	margin : 0;
-}
-
-.toc-entry {
-	font-size: 1.2em;
-	margin : 5px;
-	margin-left : 0px;
-}
