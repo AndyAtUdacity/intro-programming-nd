@@ -1,16 +1,6 @@
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-}
-a {
-	color : #1199c3;
-	text-decoration: none;
-}
-ul {
-	list-style-type: none;
-}
+
+
+
 li.table-of-contents {
 	margin : 20px 0;
 }
@@ -30,14 +20,7 @@ li {
 	cursor: pointer;
 }
 
-body {
-  font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #303030;
-  max-width: 960px;
-  margin: 0 auto;
-}
+
 h1 {
 	font-size : 2em;
 	margin : 0;
@@ -51,11 +34,7 @@ h2 {
 h3 {
 	margin-top: 2px;
 }
-.row {
-	width : 100%;
-	display: flex;
-	flex-wrap: wrap;
-}
+
 .right {
 	position: absolute;
 	right : 0;
@@ -70,38 +49,6 @@ h3 {
 }
 .relative {
 	position: relative;
-}
-.one-quarter {
-	width : 25%;
-}
-.one-third {
-	width : 33.33%;
-}
-.half {
-	width : 50%;
-}
-.two-third {
-	width : 66.66%;
-}
-.three-quarter {
-	width : 75%;
-}
-.full {
-	width : 100%;
-}
-.one-twelfth {
-	width : 8.33%;
-}
-.eleven-twelfth {
-	width : 91.66%;
-}
-.one-sixth {
-	width: 16.66%;
-	position: relative;
-	overflow: visible;
-}
-.five-sixth {
-	width: 83.33%;
 }
 .comfy {
 	padding : 4px;
@@ -206,7 +153,7 @@ div.student-note {
 	margin-bottom: 10px;
 }
 .footer {
-	background-color: #294860;
+
 	padding: 10px;
 	text-align: center;
 	color: white;
@@ -294,23 +241,6 @@ input, textarea {
   border-color: #2a82b6;
 }
 
-.button-primary {
-	background-image: linear-gradient(to bottom,#f59a18 0,#f27d13 100%);
-  background-repeat: repeat-x;
-  border-color: #c7640b;
-  color: #fff;
-  background-color: #f6a926;
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 4px 12px;
-  font-size: 24px;
-  line-height: 1.7;
-  cursor: pointer;
-}
 
 .concept-title {
 	font-size: 18px;
