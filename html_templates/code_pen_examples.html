@@ -1,40 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Codepen Examples</h2>
 
-{% for ex in examples %}
-<div class="row indent">
-	<div class="three-quarter">
-		<h3>{{ ex.title }}</h3>
-	</div>
-	<div class="one-quarter relative">
-		<div class="right">
-			<form action="vote" method="post" value="1">
-				<button class="no-style-button" name="vote_up" value="{{ex.code_pen_id}}" type="submit" style="border:0;"><img style="height: 2em;" src="/images/empty_heart.svg"></button>
-			</form>
-			 <span style="font-size: 1.5em;">{{ex.votes}} Votes</span>
+<h1 class="title">Codepen Examples</h2>
+
+
+<div class="row cp-examples">
+	{% for ex in examples %}
+	<div class="cp-example">
+		<div class="alignment">
+			<div class="section cp-text">
+				<h3 class="cp-title">{{ ex.title }}</h3>
+				<p>{{ ex.description }}</p>
+			</div>
+			<div class="cp-embed codepen">
+				<p data-height="268" class="codepen" data-theme-id="11790" data-slug-hash="{{ ex.code_pen_id }}" data-default-tab="result" data-user="{{ ex.user_name }}">
+					See the Pen <a href='http://codepen.io/{{ ex.user_name }}/pen/{{ ex.code_pen_id }}/'>{{ ex.code_pen_id }}</a> by {{ ex.user_name }} (<a href='http://codepen.io/{{ ex.user_name }}'>@{{ ex.user_name }}</a>) on <a href='http://codepen.io'>CodePen</a>.
+				</p>
+			</div>
+			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 		</div>
 	</div>
+	{% endfor %}
 </div>
-<div class="row codepen-container">
-	<div class="one-third indent">
+<!-- <div class="row">
 
-		<!-- <div class="full"> -->
-			<!-- <span><b>{{ ex.level|capitalize() }}</b></span> -->
-
-<!-- 		</div> -->
-		<div class="full">
-			<p>{{ ex.description }}</p>
+		<div>
+			<p></p>
 		</div>
+
+	<div>
+		
 	</div>
-	<div class="two-third">
-		<p data-height="268" class="codepen" data-theme-id="11790" data-slug-hash="{{ ex.code_pen_id }}" data-default-tab="result" data-user="{{ ex.user_name }}">
-			See the Pen <a href='http://codepen.io/{{ ex.user_name }}/pen/{{ ex.code_pen_id }}/'>{{ ex.code_pen_id }}</a> by {{ ex.user_name }} (<a href='http://codepen.io/{{ ex.user_name }}'>@{{ ex.user_name }}</a>) on <a href='http://codepen.io'>CodePen</a>.
-		</p>
-	</div>
-	<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-</div>
-{% endfor %}
+	
+</div> -->
+
 
 <!-- Below here is the "add your own example" code -->
 

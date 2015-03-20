@@ -8,7 +8,9 @@
 {% for c in courses %}
 
 	<div class="table-of-contents-entry">
-		<a class="item-title" href="#course-{{ loop.index }}">{{ c.title }}</a>
+		<a class="item-title" href="#course-{{ loop.index }}">
+			Course {{ loop.index }}: {{ c.title }}
+		</a>
 	</div>
 {% endfor %}
 </div>
@@ -16,7 +18,7 @@
 {% for course in courses %}
 
 <div class="row">
-	<div class="col-12 section-title">
+	<div id="course-{{ loop.index}}" class="col-12 section-title">
 		<h2>Course {{ loop.index }}: {{ course.title }}</h2>
 	</div>
 </div>

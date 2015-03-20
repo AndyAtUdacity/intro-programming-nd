@@ -1,23 +1,20 @@
-.section {
+.panel {
 	background-size: cover;
 	background-position: center;
 	height: 290px;
 	text-align: center;
 	margin : 5px auto;
 	max-width: 470px;
+	width: 100%;
 }
 
-.section-title {
+.panel-title {
 	display: inline-block;
 	background-color: rgba(0, 0, 0, 0.7);
-	width: 80%;
+	width: 90%;
 	font-weight: normal;
 	padding: 20px 40px;
 	margin-top: 100px;
 	color : white;
-	text-decoration: none;
-	vertical-align: middle;
 	font-size: 1.8em;
-	right:0;
-	top:70px;
 }

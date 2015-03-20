@@ -22,11 +22,13 @@
 
 	<body>
 		<div class="row header">
-			<div class="col-12">
+			{% if page_name == "home" %}
+			<div class="col-12 banner">
 				<img class="top-image" src="/images/andy.png">
 				<h1 class="page-title">Andy Brown's IPND Notes</h1>
 			</div>
-			<div class="col-12 nav nav-top">
+			{% endif %}
+			<div class="col-12 nav nav-top width-over-460">
 				<ul class="nav-list">
 					<li class="nav-item nav-item-left"><a id="home-link" href="/">Home</a></li>
 					{% for s in sections %}
@@ -34,6 +36,7 @@
 					{% endfor %}
 				</ul>
 			</div>
+
 		</div>
 		{% block content %}
 		{% endblock %}
