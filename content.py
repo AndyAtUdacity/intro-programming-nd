@@ -308,26 +308,29 @@ COURSES = [
 # 		]
 # 	}]
 TOPICS = [
-	{"title" : "CSS Positioning and Sizing",
-	"description" : ("I really struggled with getting my HTML to "
-					 "look right. I found these resources helpful."),
+	{"title" : "HTML Resources",
+	"description" : ("Learn more about HTML elements, tags, attributes, and forms"),
 	"resources" : [
 		{
-		"title" : "Learn CSS Layout",
-		"url" : "http://learnlayout.com/position.html",
-		"description" : ("A good walk through of the `position` "
-						 "property, including static, relative, fixed, "
-						 "and absolute positioning.")
+		"title" : "HTML Elements, Tags, and Attributes",
+		"url" : "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction#Elements_.E2.80.94_the_basic_building_blocks",
+		"description" : ("The Mozilla Developer Network (aka MDN, and a good resource in general), "
+						 "explains key HTML vocabulary. ")
 		},
 		{
-		"title" : "A Complete Guide to Flexbox",
-		"url" : "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
-		"description" : ("Flexbox is a, well, flexible box. It gives you "
-						 "a way to have your HTML elements easily adjust "
-						 "their size based on the size of the page.")
+		"title" : "HTML Forms",
+		"url" : "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML_form",
+		"description" : ("Forms are one way users interact with your page. "
+			"This is a tutorial for beginners.")
 		},
 		{
-		"title" : "Intro to HTML and CSS",
+		"title" : "List of every HTML Element",
+		"url" : "https://developer.mozilla.org/en-US/docs/Web/HTML/Element",
+		"description" : ("Scan through to get a feel for all the HTML elements "
+			"that exist from <a> to <video>.")
+		},
+		{
+		"title" : "Udacity's Intro to HTML and CSS",
 		"url" : "https://www.udacity.com/course/ud304",
 		"description" : ("The first lesson of this Udacity course is already "
 						 "in the Nanodegree, but the rest of the course does "
@@ -336,19 +339,53 @@ TOPICS = [
 		}
 	]
 	},
-	{"title" : "Python Practice",
-	"description" : ("Getting good at programming/Python requires a lot of practice. "
-					 "These are some of my favorite sources of programming practice "
-					 "problems."),
+	{"title" : "CSS Resources", #Positioning, Layout, Priority Rules, Selection, Inheritance
+	"description" : ("Learn how to make your web page look good."),
 	"resources" : [
+		{
+		"title" : "CSS Layout",
+		"url" : "http://learnlayout.com/position.html",
+		"description" : ("A good walk through of the `position` "
+						 "property, including static, relative, fixed, "
+						 "and absolute positioning.")
+		},
+		{
+		"title" : "Flexbox Explanation",
+		"url" : "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
+		"description" : ("Flexbox is a flexible box! It gives you "
+						 "a way to have your HTML elements easily adjust "
+						 "their size based on the size of the page.")
+		},
+		{
+		"title" : "Bootstrap",
+		"url" : "http://getbootstrap.com/getting-started/#examples",
+		"description" : ('Bootstrap is a popular CSS "framework" which provides you with '
+			'pre-written CSS to make your page look good.')
+		},
+		{
+		"title" : "Color Palette Examples",
+		"url" : "http://www.dtelepathy.com/blog/inspiration/beautiful-color-palettes-for-your-next-web-project",
+		"description" : ("It's hard to find colors that look good together. "
+			"This is a list of 50 color palettes.")
+		}
+	]
+	},
+	{"title" : "Python Resources",
+	"description" : ("Get more Python practice and read more about important Python "
+		"concepts."),
+	"resources" : [
+		{
+		"title" : "29 Common Beginner Python Errors",
+		"url" : "http://pythonforbiologists.com/index.php/29-common-beginner-python-errors-on-one-page/",
+		"description" : ("A super-helpful flowchart for when your code isn't working.")
+		},
 		{
 		"title" : "Learn Python the Hard Way",
 		"url" : "http://learnpythonthehardway.org/book/",
-		"description" : ("This is a free online book by Zed Shaw. It's written "
+		"description" : ("A free online book by Zed Shaw. It's written "
 						 "for novice programmers looking to learn Python. It's "
 						 "organized by topic and has very good explanations and example "
-						 "code throughout. Each section ends with helpful 'Study Drills.' "
-						 "Highly recommended resource.")
+						 "code throughout. Each section ends with helpful 'Study Drills.'")
 		},
 		{
 		"title" : "Project Euler",
@@ -358,13 +395,6 @@ TOPICS = [
 						 "good place for building your 'Procedural Thinking'.")
 		},
 		{
-		"title" : "Coding Bat",
-		"url" : "http://codingbat.com/python",
-		"description" : ("Though the problems on this site all assume some "
-						 "ability with Python functions, there is a good selection "
-						 "of fairly easy problems (if you know how to use functions).")
-		},
-		{
 		"title" : "More Resources from python.org",
 		"url" : "https://wiki.python.org/moin/ProblemSets",
 		"description" : ("The organization that manages the Python language also "
@@ -372,10 +402,8 @@ TOPICS = [
 						 "better than others.")
 		}]},
 	{"title" : 'Python "Web Frameworks"',
-	"description" : ("A 'Web Framework' is a tool that facilitates the development "
-		"of web applications. In Course 4, we used Google AppEngine to build our "
-		"web app. The frameworks listed here can make it even easier to build large web "
-		"applications by taking care of a lot of the necessary details for you."),
+	"description" : ("The frameworks listed here can make it easier to build large web "
+		"applications by taking care of a lot of the ugly details for you."),
 	"resources" : [
 		{
 		"title" : "Flask",
@@ -401,41 +429,53 @@ TOPICS = [
 			"features, but Flask is easier to learn.")
 		}
 	]},
+	{"title" : 'Cool Tools',
+	"description" : ("Great tools to make you a more powerful programmer."),
+	"resources" : [
+		{
+		"title" : "Web Developer Browser Extension",
+		"url" : "http://chrispederick.com/work/web-developer/",
+		"description" : ("""Chris Pederick's "Web Developer Extenstion """
+			"is a tool to make web development easier. You can see the box-like "
+			"structure of a page, easily disable CSS, and more.")
+		},
+		{
+		"title" : "iPython and iPython Notebook",
+		"url" : "http://ipython.org/notebook.html",
+		"description" : ("Wow. These tools changed how I code. Do youself a favor: visit "
+			"this page, install iPython Notebook, and make your programming life 100 times better.")
+		},
+		{
+		"title" : "External Libraries for Python",
+		"url" : "http://pythonhackers.com/top-python-projects/",
+		"description" : ("A list of popular external libraries for Python ordered by votes.")
+		},
+		{
+		"title" : "Useful Modules from Python Standard Library",
+		"url" : "http://stackoverflow.com/questions/1453952/most-useful-python-modules-from-the-standard-library",
+		"description" : ("A thread on stackoverflow about the most useful modules "
+			"that come with Python.")
+		}
+	]},
 	{"title" : 'Other Udacity Nanodegrees',
-	"description" : ("Once you've completed the Intro Programming Nanodegree, you'll "
-		"be ready to take most (if not all) of Udacity's other Nanodegrees (which can "
-		"actually prepare you for a job in programming)."),
+	"description" : ("After the Intro Programming Nanodegree, you'll "
+		"be ready to take most (if not all) of Udacity's other Nanodegrees."),
 	"resources" : [
 		{
 		"title" : "Front-End Web Developer Nanodegree",
 		"url" : "https://www.udacity.com/course/nd001",
-		"description" : ("In this Nanodegree you'll get a deeper understanding HTML and "
-			"CSS and will develop ability with JavaScript, the third language of web development. "
-			"You'll learn to build beautiful, responsive websites optimized for security and "
-			"performance. You'll build six portfolio-worthy projects and learn how to do well "
-			"in a programming job interview.")
+		"description" : ("Learn more about Front-end web development: responsive "
+			"design, JavaScript, jQuery, and more.")
 		},
 		{
 		"title" : "iOS Developer Nanodegree",
 		"url" : "https://www.udacity.com/course/nd003",
-		"description" : ("iOS is the operating system used on iPhones and iPads. In this "
-			"Nanodegree you learn the skills required to become an iOS "
-			"Developer. Developing mobile apps can be a lot of fun (and often easier than web "
-			"development in many ways). It can also be very lucrative: since iOS developers are in high "
-		  "demand, there are many jobs available in the field. But it's also possible to make highly "
-		  "successful apps on your own. In this Nanodegree program, you'll build five portfolio-worthy "
-		  "iOS apps that demonstrate your expertise as an iOS Developer. You'll write all of these apps "
-		  "in Swift, Apple's custom programming language developed specifically for building iOS and OS X apps.")
+		"description" : ("Learn to make apps for iPhone and iPad.")
 		},
 		{
 		"title" : "Full Stack Web Developer Nanodegree",
 		"url" : "https://www.udacity.com/course/nd004",
-		"description" : ("This Nanodegree program prepares you for a job as a Full Stack Web Developer. "
-			"Participants in the program will learn to build complex server-side web applications that "
-			"make use of powerful relational databases to persistently store data. You'll then learn how "
-			"to secure and configure your very own Linux-based server to host your applications. Finally, "
-			"you'll explore the challenges in horizontally scaling an application to support thousands of "
-			"users with a cloud-based application hosting provider.")
+		"description" : ('Learn how to make bigger and better "full-stack" web applications.')
 		}
 	]}]
 SECTIONS = [
