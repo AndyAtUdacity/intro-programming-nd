@@ -1,3 +1,8 @@
+/* COURSE 1:
+In general, you don't want to style entire elements
+(like I do here, where I apply styles to body, h1, h2,
+and a elements). But notice that these are all very general
+style guidelines, like fonts, colors, etc... */
 body {
   font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 18px;
@@ -7,6 +12,118 @@ body {
   margin: 0 auto;
 }
 
+/* COURSE 1:
+This statement applies styling to h1 AND h2 elements.*/
+h1, h2 {
+	color : #294860;
+}
+
+/* COURSE 1:
+The text-decoration rule I've set here prevents links from
+having underlines (which I don't like).*/
+a {
+	color : #1199c3;
+	text-decoration: none;
+}
+
+/* COURSE 1:
+This changes the color when I hover my mouse over a link.
+I could also have specified a:active and a:visited.*/
+a:hover {
+	color: #307699;
+}
+
+.header,
+.footer {
+	background-color: #294860;
+	color: white;
+}
+
+.footer {
+	padding-bottom: 40px;
+}
+
+.page-title {
+	text-align: center;
+	margin-top:0;
+}
+
+/* COURSE 1:
+I really struggled to get this image to behave
+the way I wanted it to. I'm not too happy with this
+CSS since I don't really understand why it works.
+But... it works and I decided not to worry about it.*/
+.top-image {
+	min-width : 60px;
+	max-width: 100px;
+	width : 10%;
+	min-height : 60px;
+	float: left;
+	margin : 10px;
+}
+
+/* COURSE 1:
+This is a new selector! Notice that it begins with
+".footer .take-nanodegree" with NO commas. This is a
+way of selecting only elements with
+class="take-nanodegree" IF they have an "ancestor"
+element with class="footer". This added specificity
+also increases the importance of these rules, so they
+take precedent over rules which are less specific.
+To learn more, check out the "Using Multiple Selectors"
+link in the Extra Resources section of this page.  */
+.footer .take-nanodegree {
+	display: block;
+	width : 100%;
+	text-align: center;
+}
+
+.header .page-title,
+.footer .take-nanodegree {
+	color: white;
+	padding-top:10px;
+}
+
+.title {
+	margin-bottom: 0.5em;
+	text-align: center;
+	padding-left: 0.2em;
+}
+
+/* COURSE 1:
+The rule "list-style-type: none;" removes the bullet points
+from the list.*/
+.nav-list {
+	list-style-type:none;
+	text-align: center;
+	padding : 0;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+/* COURSE 5:
+The most interesting rule here is the first one. By setting
+"display: block;", I'm telling the links to take up the whole
+width. This is me designing "mobile-first". You'll notice later
+in the CSS that this display is overridden if the screen width
+is large enough.*/
+.nav-item a {
+	display: block;
+	width: 100%;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top : 0.5em;
+	font-size : 1.3em;
+	color : rgba(255, 255, 255, 0.65);
+}
+
+.nav-item a:hover {
+	color: #307699;
+}
+
+/* COURSE 5: The @media statement allows me to write
+CSS that only applies under certain circumstances.
+It's helpful for making pages that look good on mobile.*/
 @media screen and (max-width:750px) {
 	body {
 		font-size : 16px;
@@ -28,28 +145,8 @@ body {
 	}
 }
 
-.nav-list {
-	list-style-type:none;
-	text-align: center;
-	padding : 0;
-	margin-top:0;
-	margin-bottom:0;
-}
-
-.nav-item a {
-	display: block;
-	width: 100%;
-	padding-left: 1em;
-	padding-right: 1em;
-	padding-top : 0.5em;
-	font-size : 1.3em;
-	color : rgba(255, 255, 255, 0.65);
-}
-
-.nav-item a:hover {
-	color: #307699;
-}
-
+/* This is the CSS that gets triggered when the width
+is bigger than 520 px.*/
 @media screen and (min-width:520px) {
 	.nav-list {
 		text-align: left;
@@ -67,68 +164,8 @@ body {
 	}
 }
 
-@media screen and (min-width: 650px) {
-	.cp-example {
-		width : 50%;
-	}
-}
-
-a {
-	color : #1199c3;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #307699;
-}
-
-h1, h2 {
-	color : #294860;
-}
-
-.header,
-.footer {
-	background-color: #294860;
-	color: white;
-}
-
-.footer {
-	padding-bottom: 40px;
-}
-
-.page-title {
-	text-align: center;
-	margin-top:0;
-}
-
-.top-image {
-	min-width : 60px;
-	max-width: 100px;
-	width : 10%;
-	min-height : 60px;
-	float:left;
-	margin : 10px;
-}
-
-.header .page-title,
-.footer .take-nanodegree {
-	color: white;
-	padding-top:10px;
-}
-
-.footer .take-nanodegree {
-	display: block;
-	width : 100%;
-	text-align: center;
-}
-
-.title {
-	margin-bottom: 0.5em;
-	text-align: center;
-	padding-left: 0.2em;
-}
-
-/* I decided to use a generic idea of "sections"
+/* COURSE 1:
+I decided to use a generic idea of "sections"
 throughout all pages. Initially I was individually styling
 the "topic" sections on the resource pages AND the "course"
 sections on the notes page. But I realized I wanted them to
@@ -171,7 +208,6 @@ look the same so I generalized.*/
 	list-style-type: none;
 }
 
-
 /* I wanted all "table-of-contents" sections to look
 the same. */
 
@@ -184,8 +220,11 @@ the same. */
 	font-size : 1.2em;
 }
 
-/* This is some pretty advanced CSS. I stole it from the
-Udacity site :) */
+/* COURSE 1
+This is some pretty advanced CSS. I stole it from the
+Udacity site and don't fully understand the first 2 lines.
+I could look up background-repeat and linear-gradient
+if I wanted to, but for now I don't really care :) */
 .button-primary {
 	background-image: linear-gradient(to bottom,#f59a18 0,#f27d13 100%);
   background-repeat: repeat-x;
@@ -204,6 +243,10 @@ Udacity site :) */
   cursor: pointer;
 }
 
+/* EVERYTHING BELOW HERE ONLY APPLIES TO CERTAIN PAGES */
+
+/* MAY WANT TO SEPARATE THE FOLLOWING CSS INTO
+A SEPARATE FILE FOR "CODEPEN EXAMPLES"*/
 .cp-example .cp-title {
 	text-align: left;
 	margin-top: 0;
@@ -238,6 +281,16 @@ Udacity site :) */
 	vertical-align: bottom;
 }
 
+@media screen and (min-width: 650px) {
+	.cp-example {
+		width : 50%;
+	}
+}
+/* END CODEPEN EXAMPLES */
+
+
+/* MAY WANT TO SEPARATE THE FOLLOWING CSS INTO
+A SEPARATE FILE FOR "HOME PAGE" AND "STUDENT NOTES" */
 .panel {
 	background-size: cover;
 	background-position: center;
@@ -258,4 +311,42 @@ Udacity site :) */
 	color : white;
 	font-size: 1.8em;
 }
+/* END "HOME PAGE" / "STUDENT NOTES" CSS */
 
+
+/* MAY WANT TO SEPARATE THE FOLLOWING INTO SEPARATE FILE
+FOR "ANDY'S NOTES" SECTION */
+.caption {
+	font-size : 0.8em;
+	font-weight:bold;
+}
+
+.embedded-video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	right:0;
+}
+
+.embedded-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.course-info,
+.video {
+	width : 50%;
+	padding: 0 0.5em;
+}
+
+@media screen and (max-width:750px) {
+	.course-info,
+	.video {
+		width: 100%;
+	}
+}
+/* END "ANDY'S NOTES" CSS */
