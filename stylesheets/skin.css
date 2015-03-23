@@ -2,7 +2,6 @@ body {
   font-family: "Whitney SSm A","Whitney SSm B","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 18px;
   line-height: 1.7;
-
   color: #303030;
   max-width: 960px;
   margin: 0 auto;
@@ -27,13 +26,50 @@ body {
 	body {
 		font-size : 12px;
 	}
-	.header .nav ul,
-	.header .nav li {
-		display : inline;
-		width : 100%;
-		text-align : center;
-		padding : 0;
-		margin : 0 ;
+}
+
+.nav-list {
+	list-style-type:none;
+	text-align: center;
+	padding : 0;
+	margin-top:0;
+	margin-bottom:0;
+}
+
+.nav-item a {
+	display: block;
+	width: 100%;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top : 0.5em;
+	font-size : 1.3em;
+	color : rgba(255, 255, 255, 0.65);
+}
+
+.nav-item a:hover {
+	color: #307699;
+}
+
+@media screen and (min-width:520px) {
+	.nav-list {
+		text-align: left;
+		float:right;
+		width: 100%;
+	}
+	.nav-item {
+		display: inline-block;
+	}
+	.nav-item-left {
+		float: left;
+	}
+	.nav-item-right {
+		float: right;
+	}
+}
+
+@media screen and (min-width: 650px) {
+	.cp-example {
+		width : 50%;
 	}
 }
 
@@ -50,14 +86,52 @@ h1, h2 {
 	color : #294860;
 }
 
+.header,
+.footer {
+	background-color: #294860;
+	color: white;
+}
+
+.footer {
+	padding-bottom: 40px;
+}
+
+.page-title {
+	text-align: center;
+	margin-top:0;
+}
+
+.top-image {
+	min-width : 60px;
+	max-width: 100px;
+	width : 10%;
+	min-height : 60px;
+	float:left;
+	margin : 10px;
+}
+
+.header .page-title,
+.footer .take-nanodegree {
+	color: white;
+	padding-top:10px;
+}
+
+.footer .take-nanodegree {
+	display: block;
+	width : 100%;
+	text-align: center;
+}
+
 .title {
 	margin-bottom: 0.5em;
 	text-align: center;
+	padding-left: 0.2em;
 }
-/* I decided to use a generic idea of "sections" 
+
+/* I decided to use a generic idea of "sections"
 throughout all pages. Initially I was individually styling
-the "topic" sections on the resource pages AND the "course" 
-sections on the notes page. But I realized I wanted them to 
+the "topic" sections on the resource pages AND the "course"
+sections on the notes page. But I realized I wanted them to
 look the same so I generalized.*/
 .section-title {
 	color : #294860;
@@ -69,7 +143,7 @@ look the same so I generalized.*/
 }
 
 .section,
-.section ul, 
+.section ul,
 .section ol {
 	padding-left: 0.4em;
 }
@@ -82,29 +156,6 @@ look the same so I generalized.*/
 	margin : 0;
 	margin-left: 0.4em;
 	padding-right:0.4em;
-	font-size: 1.1em;
-}
-
-.section li p {
-	font-size: 1em;
-}
-
-
-/* I wanted all "table-of-contents" sections to look
-the same. */
-
-.table-of-contents-entry {
-	width : 100%;
-	padding: 0.4em;
-}
-
-.item-title {
-	font-size : 1.2em;
-}
-
-.header .page-title,
-.footer .take-nanodegree {
-	color: white;
 }
 
 .section h3 {
@@ -120,81 +171,21 @@ the same. */
 	list-style-type: none;
 }
 
-.header,
-.footer {
-	background-color: #294860;
-	color: white;
-}
 
-.title {
-	padding-left: 0.2em;
-}
+/* I wanted all "table-of-contents" sections to look
+the same. */
 
-.footer {
-	padding-bottom: 40px;
-}
-
-.page-title {
-	margin-top: 20px;
-	text-align: center;
-}
-
-.top-image {
-	min-width : 60px;
-	max-width: 100px;
-	width : 10%;
-	min-height : 60px;
-	float:left;
-	margin : 10px;
-}
-
-.nav-top {
-	padding-bottom: 10px;
-}
-
-.nav-top .dropdown {
-	float : right;
-	display: none;
-	background: transparent;
-	border : 0px;
-	color : inherit;
-	font-family: inherit;
-	font-size: inherit;
-}
-
-.nav-list {
-	padding : 0;
-	list-style-type: none;
-}
-
-.nav-item a {
-	display : inline-block;
-	font-size : 1.3em;
-	color : rgba(255, 255, 255, 0.65)
-}
-
-.nav-item a:hover {
-	color: #307699;
-}
-
-.nav-item-right {
-	float: right;
-	margin-left: 15px;
-	margin-right: 10px;
-}
-
-.nav-item-left {
-	float: left;
-	margin-left: 10px;
-	margin-right: 5px;
-}
-
-.footer .take-nanodegree {
-	display: block;
+.table-of-contents-entry {
 	width : 100%;
-	text-align: center;
+	padding: 0.4em;
 }
 
+.item-title {
+	font-size : 1.2em;
+}
+
+/* This is some pretty advanced CSS. I stole it from the
+Udacity site :) */
 .button-primary {
 	background-image: linear-gradient(to bottom,#f59a18 0,#f27d13 100%);
   background-repeat: repeat-x;
@@ -211,12 +202,6 @@ the same. */
   font-size: 1.4em;
   line-height: 1.7;
   cursor: pointer;
-}
-
-@media screen and (max-width:580px) {
-	body {
-		font-size : 14px;
-	}
 }
 
 .cp-example .cp-title {
@@ -245,12 +230,6 @@ the same. */
 	padding-bottom: 0.5em;
 }
 
-@media screen and (min-width: 650px) {
-	.cp-example {
-		width : 50%;
-	}
-}
-
 .cp-embed {
 	border-top: solid 1px #2D2D2D;
 	width: 100%;
@@ -258,3 +237,25 @@ the same. */
 	float: bottom;
 	vertical-align: bottom;
 }
+
+.panel {
+	background-size: cover;
+	background-position: center;
+	height: 290px;
+	text-align: center;
+	margin : 5px auto;
+	max-width: 470px;
+	width: 100%;
+}
+
+.panel-title {
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.7);
+	width: 90%;
+	font-weight: normal;
+	padding: 20px 40px;
+	margin-top: 100px;
+	color : white;
+	font-size: 1.8em;
+}
+
