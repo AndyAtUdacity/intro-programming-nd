@@ -350,6 +350,20 @@ TOPICS = [
 						 "and absolute positioning.")
 		},
 		{
+		"title" : "Using Multiple Selectors",
+		"url" : "https://css-tricks.com/multiple-class-id-selectors/",
+		"description" : ('By using "Multiple Selectors" you can apply styling '
+			'only to elements which meet multiple criteria.')
+		},
+		{
+		"title" : "Specificity Rules",
+		"url" : "http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/",
+		"description" : ('What happens when multiple conflicting rules apply '
+			'to the same element? CSS Specificity rules are what decide which rules'
+			'"win". If you are having trouble getting rules to work, this is probably '
+			'the resource you need.')
+		},
+		{
 		"title" : "Flexbox Explanation",
 		"url" : "https://css-tricks.com/snippets/css/a-guide-to-flexbox/",
 		"description" : ("Flexbox is a flexible box! It gives you "
