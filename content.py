@@ -257,10 +257,18 @@ COURSES = [
 	]
 CODE_PENS = [
 {
-	'title':'Scratchpad vs. Codepen vs. Sublime',
-	'description':'A table that breaks down the pros and cons of these three tools.',
+	'title':'Inline vs Block Demo',
+	'description':'A demonstration of various HTML elements to determine which are block-level and which are inline.',
 	'level': 'beginner',
-	'code_pen_id':'azYrBM',
+	'code_pen_id':'LEqLNz',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+},
+{
+	'title':'<span> vs <div> Demo',
+	'description':'An example showing the difference between spans and divs and what it means to "nest" elements.',
+	'level': 'beginner',
+	'code_pen_id':'LEqLje',
 	'user_name':'AndyAtUdacity',
 	'votes':0
 },
@@ -269,6 +277,38 @@ CODE_PENS = [
 	'description':'An example of HTML code with <b>, <p>, and <em> tags.',
 	'level': 'beginner',
 	'code_pen_id':'ByVLVX',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+},
+{
+	'title':'Traffic Light Style Example',
+	'description':'Demonstration of how to use classes to style certain elements',
+	'level': 'beginner',
+	'code_pen_id':'OPdjXy',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+},
+{
+	'title':'Traffic Light Style Example 2',
+	'description':'Shows how to give a single element multiple classes.',
+	'level': 'beginner',
+	'code_pen_id':'RNvZRX',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+},
+{
+	'title':'Traffic Light Style Example 3',
+	'description':'I had too much fun playing with my CSS :)',
+	'level': 'beginner',
+	'code_pen_id':'NPovad',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+},
+{
+	'title':'Scratchpad vs. Codepen vs. Sublime',
+	'description':'A table that breaks down the pros and cons of these three tools.',
+	'level': 'beginner',
+	'code_pen_id':'azYrBM',
 	'user_name':'AndyAtUdacity',
 	'votes':0
 },
@@ -325,8 +365,8 @@ TOPICS = [
 		"title" : "Specificity Rules",
 		"url" : "http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/",
 		"description" : ('What happens when multiple conflicting rules apply '
-			'to the same element? CSS Specificity rules are what decide which rules'
-			'"win". If you are having trouble getting rules to work, this is probably '
+			'to the same element? CSS Specificity rules are what decide which rule '
+			'"wins". If you are having trouble getting rules to work, this is probably '
 			'the resource you need.')
 		},
 		{
@@ -493,5 +533,5 @@ class Submission(ndb.Model):
   description = ndb.StringProperty(indexed=False, required=True)
   date = ndb.DateTimeProperty(auto_now_add=True)
   image_url = ndb.StringProperty(indexed=False)
-  name = ndb.StringProperty(indexed=False, require=True)
+  name = ndb.StringProperty(indexed=False, required=True)
 
