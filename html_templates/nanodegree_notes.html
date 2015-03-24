@@ -1,3 +1,5 @@
+<!-- This is the HTML template for the  -->
+
 {% extends "base.html" %}
 {% block content %}
 
@@ -29,11 +31,11 @@
 
 	<div class="course-info">
 		<ol>
-
+		{% set course_number = loop.index %}
 		{% for lesson in course.lessons %}
 
 			<li>
-				<a class="item-title" href="{{ lesson.url }}" target="_blank">
+				<a class="item-title" href="course/{{ course_number }}/#lesson-{{ loop.index }}">
 					Lesson {{ loop.index }} - {{ lesson.title }}
 				</a>
 				<p>{{ lesson.description }}</p>

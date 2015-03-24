@@ -1,3 +1,14 @@
+# COURSE 2 / 4:
+# This is a complex data structure which consists of
+# lists and dictionaries (you learn about those in Course 4). But
+# this list allows us to keep all of our content in one place.
+# We then inject this content into the HTML templates (you'll learn
+# about them in Course 4).
+
+# COURSE 2:
+# When you start writing your own functions to automatically
+# generate HTML, you are actually writing a simple version of
+# an HTML templating engine.
 from google.appengine.ext import ndb
 
 DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
@@ -478,9 +489,9 @@ def guestbook_key(guestbook_name=DEFAULT_GUESTBOOK_NAME):
 class Submission(ndb.Model):
   """A main model for representing an individual Guestbook entry."""
   # author = ndb.StructuredProperty(Author)
-  link = ndb.StringProperty(indexed=False)
-  description = ndb.StringProperty(indexed=False)
+  link = ndb.StringProperty(indexed=False, required=True)
+  description = ndb.StringProperty(indexed=False, required=True)
   date = ndb.DateTimeProperty(auto_now_add=True)
   image_url = ndb.StringProperty(indexed=False)
-  name = ndb.StringProperty(indexed=False)
+  name = ndb.StringProperty(indexed=False, require=True)
 

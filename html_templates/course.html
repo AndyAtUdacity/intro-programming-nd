@@ -13,7 +13,7 @@
 		<p class="description">{{ course.description }}</p>
 	</div>
 	{% for lesson in course.lessons %}
-	<div class="col-12 section-title">
+	<div id="lesson-{{ loop.index }}" class="col-12 section-title">
 		<h2>Lesson {{ loop.index }}: {{ lesson.title }}</h2>
 	</div>
 	<div class="section">
