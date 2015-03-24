@@ -1,8 +1,6 @@
 from google.appengine.ext import ndb
 
 DEFAULT_GUESTBOOK_NAME = 'default_guestbook'
-DEFAULT_CODE_EXAMPLES_NAME = 'default_code_examples'
-DEFAULT_CODE_PEN_NAME = 'default_code_pen'
 COURSES = [
 	{"title"    : "Webpages, Documents, and Structure",
 		"description" : ("This was my introduction to the world of coding. "
@@ -246,67 +244,24 @@ COURSES = [
 		]
 	}
 	]
-# THINKING = [
-# 	{"title" : "Abstract Thinking",
-# 		"description" : ("Abstract thinking means finding similarity, or as "
-# 						 "programmers would say, generality amongst seemingly "
-# 						 "different things."),
-# 		"examples" : [
-# 			{"title" : "title-1",
-# 			 "description" : "description-1"},
-# 			{"title" : "title-2",
-# 			 "description" : "description-2"}
-# 		]
-# 	},
-# 	{"title" : "Procedural Thinking",
-# 		"description" : ("Procedural thinking involves creating perfectly "
-# 						 "clear and unambiguous instructions for a computer "
-# 						 "to follow."),
-# 		"examples" : [
-# 			{"title" : "title-1",
-# 			 "description" : "description-1"},
-# 			{"title" : "title-2",
-# 			 "description" : "description-2"}
-# 		]
-# 	},
-# 	{"title" : "Systems Thinking",
-# 		"description" : ("Systems thinking happens when you break a big "
-# 						 "problem down into smaller pieces. Programmers do "
-# 						 "this when they create a plan (often on paper) for "
-# 						 "how a program will work. It involves big-picture "
-# 						 "thinking and decision-making about a problem and "
-# 						 "how different pieces of a program can work together "
-# 						 "to solve it."),
-# 		"examples" : [
-# 			{"title" : "title-1",
-# 			 "description" : "description-1"},
-# 			{"title" : "title-2",
-# 			 "description" : "description-2"}
-# 		]
-# 	},
-# 	{"title" : "Debugging",
-# 		"description" : ("Debugging is a systematic process of relentlessly "
-# 						 "identifying the cause of a computer program that "
-# 						 "doesn't work."),
-# 		"examples" : [
-# 			{"title" : "title-1",
-# 			 "description" : "description-1"},
-# 			{"title" : "title-2",
-# 			 "description" : "description-2"}
-# 		]
-# 	},
-# 	{"title" : "Technical Empathy",
-# 		"description" : ("'Technological empathy' comes in many forms. For "
-# 						 "example, computer empathy is the ability to "
-# 						 "understand what a computer is, how it works, and "
-# 						 "what it's good and bad at doing."),
-# 		"examples" : [
-# 			{"title" : "title-1",
-# 			 "description" : "description-1"},
-# 			{"title" : "title-2",
-# 			 "description" : "description-2"}
-# 		]
-# 	}]
+CODE_PENS = [
+{
+	'title':'Scratchpad vs. Codepen vs. Sublime',
+	'description':'A table that breaks down the pros and cons of these three tools.',
+	'level': 'beginner',
+	'code_pen_id':'azYrBM',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+},
+{
+	'title':'Stage 0 Example',
+	'description':'An example of HTML code with <b>, <p>, and <em> tags.',
+	'level': 'beginner',
+	'code_pen_id':'ByVLVX',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+},
+]
 TOPICS = [
 	{"title" : "HTML Resources",
 	"description" : ("Learn more about HTML elements, tags, attributes, and forms"),
@@ -511,12 +466,6 @@ SECTIONS = [
 	 "short_title":"Resources",
 	 "id"        : "resources"
 	},
-	# {"title"     : "Thinking Like a Programmer",
-	#  "image_url" : "/images/blueprint.jpg",
-	#  "href"      : "thinking_like_a_programmer/",
-	#  "short_title":"Thinking",
-	#  "id"        : "thinking"
-	# },
 	{"title"     : "Codepen Examples",
 	 "image_url" : "/images/pen.jpg",
 	 "href"      : "code_pen_examples/",
@@ -534,35 +483,4 @@ class Submission(ndb.Model):
   date = ndb.DateTimeProperty(auto_now_add=True)
   image_url = ndb.StringProperty(indexed=False)
   name = ndb.StringProperty(indexed=False)
-
-def code_examples_key(code_examples_name = DEFAULT_CODE_EXAMPLES_NAME):
-	return ndb.Key('Code Examples', code_examples_name)
-
-class CodeExample(ndb.Model):
-	language = ndb.StringProperty(required=True, choices=["html", "css", "python", "other"])
-	votes = ndb.IntegerProperty(default=0)
-	date = ndb.DateTimeProperty(auto_now_add=True)
-	title = ndb.StringProperty(required=True)
-	description = ndb.StringProperty()
-	url = ndb.StringProperty(required=True)
-	def vote(self):
-		self.votes = self.votes + 1
-
-def code_pen_key(code_pen_name = DEFAULT_CODE_PEN_NAME):
-	return ndb.Key('Code Pen Examples', code_pen_name)
-
-class CodePenExample(ndb.Model):
-	available_levels = ['beginner', 'intermediate', 'expert']
-	votes = ndb.IntegerProperty(default=0)
-	date = ndb.DateTimeProperty(auto_now_add=True)
-	title = ndb.StringProperty(required=True)
-	description = ndb.StringProperty()
-	user_name = ndb.StringProperty(required=True)
-	code_pen_id = ndb.StringProperty(required=True)
-	level = ndb.StringProperty(required=True, choices=available_levels)
-
-
-
-
-
 

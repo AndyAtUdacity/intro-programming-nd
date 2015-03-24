@@ -225,6 +225,26 @@ This is some pretty advanced CSS. I stole it from the
 Udacity site and don't fully understand the first 2 lines.
 I could look up background-repeat and linear-gradient
 if I wanted to, but for now I don't really care :) */
+.button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .button-primary {
 	background-image: linear-gradient(to bottom,#f59a18 0,#f27d13 100%);
   background-repeat: repeat-x;
@@ -243,7 +263,74 @@ if I wanted to, but for now I don't really care :) */
   cursor: pointer;
 }
 
+.button-primary:hover {
+	border-color: #974c08;
+  background-image: -webkit-linear-gradient(#ffb141,#f59a18 20%,#f27d13);
+  background-image: linear-gradient(#ffb141,#f59a18 20%,#f27d13);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffb141', endColorstr='#fff27d13', GradientType=0);
+}
+
+.button-primary:active {
+	border-color: #974c08;
+  background-image: -webkit-linear-gradient(#e98e0a,#f27d13 20%,#f27d13);
+  background-image: linear-gradient(#e98e0a,#f27d13 20%,#f27d13);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe98e0a', endColorstr='#fff27d13', GradientType=0);
+}
+
+.button-secondary {
+	color: #fff;
+  background-color: #1199c3;
+  border-color: #5891b0;
+  background-image: -webkit-linear-gradient(top,#52b6ee 0,#409cd3 100%);
+  background-image: linear-gradient(to bottom,#52b6ee 0,#409cd3 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff52b6ee', endColorstr='#ff409cd3', GradientType=0);
+  border-color: #2a82b6;
+  margin: 1.5em;
+}
+
+.button-secondary:hover {
+  border-color: #21648c;
+  background-image: -webkit-linear-gradient(#74ceff,#52b6ee 20%,#409cd3);
+  background-image: linear-gradient(#74ceff,#52b6ee 20%,#409cd3);
+  background-repeat: no-repeat;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff74ceff', endColorstr='#ff409cd3', GradientType=0);
+}
+
+.button-secondary:active {
+  border-color: #21648c;
+  background-image: -webkit-linear-gradient(#3badec,#409cd3 20%,#409cd3);
+  background-image: linear-gradient(#3badec,#409cd3 20%,#409cd3);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3badec', endColorstr='#ff409cd3', GradientType=0);
+}
+
 /* EVERYTHING BELOW HERE ONLY APPLIES TO CERTAIN PAGES */
+
+.submission-text {
+	width : 100%;
+	margin: 0;
+	padding: 0.5em;
+	background-color: rgba(0, 0, 0, 0.7);
+	color : white;
+	font-weight: normal;
+}
+
+.submission-form {
+	font-size : 1.2em;
+}
+.submission-form input,
+.submission-form textarea {
+	margin-bottom: 20px;
+	min-height: 48px;
+	font-size: 1.2em;
+	max-width: 100%;
+}
+
 
 /* MAY WANT TO SEPARATE THE FOLLOWING CSS INTO
 A SEPARATE FILE FOR "CODEPEN EXAMPLES"*/
@@ -292,6 +379,7 @@ A SEPARATE FILE FOR "CODEPEN EXAMPLES"*/
 /* MAY WANT TO SEPARATE THE FOLLOWING CSS INTO
 A SEPARATE FILE FOR "HOME PAGE" AND "STUDENT NOTES" */
 .panel {
+	background-image: url("/images/ipnd.png");
 	background-size: cover;
 	background-position: center;
 	height: 290px;
