@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="title">Codepen Examples</h2>
+<h1 class="title">Codepen Examples</h1>
+
+<div class="row">
+{% for example in examples %}
+
+	<div class="table-of-contents-entry">
+		<a class="item-title" href="#{{ example.code_pen_id }}">
+			{{ example.title }}
+		</a>
+	</div>
+
+{% endfor %}
+</div>
 
 <div class="row cp-examples">
 	{% for ex in examples %}
-	<div class="cp-example">
+	<div class="cp-example" id="{{ ex.code_pen_id }}">
 		<div class="alignment">
 			<div class="section cp-text">
 				<h3 class="cp-title">{{ ex.title }}</h3>
