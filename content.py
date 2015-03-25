@@ -1,4 +1,4 @@
-# COURSE 2 / 4:
+# COURSE 2 / COURSE 4:
 # This is a complex data structure which consists of
 # lists and dictionaries (you learn about those in Course 4). But
 # this list allows us to keep all of our content in one place.
@@ -281,26 +281,34 @@ CODE_PENS = [
 	'votes':0
 },
 {
-	'title':'Traffic Light Style Example',
-	'description':'Demonstration of how to use classes to style certain elements',
+	'title':'Using Classes to Style Elements',
+	'description':'Simple traffic light demonstrates how to use classes to style certain elements.',
 	'level': 'beginner',
 	'code_pen_id':'OPdjXy',
 	'user_name':'AndyAtUdacity',
 	'votes':0
 },
 {
-	'title':'Traffic Light Style Example 2',
-	'description':'Shows how to give a single element multiple classes.',
-	'level': 'beginner',
+	'title':'Multiple Classes on one Element',
+	'description':'More sophisticated traffic light example shows how to give a single element multiple classes.',
+	'level': 'intermediate',
 	'code_pen_id':'RNvZRX',
 	'user_name':'AndyAtUdacity',
 	'votes':0
 },
 {
-	'title':'Traffic Light Style Example 3',
-	'description':'I had too much fun playing with my CSS :)',
-	'level': 'beginner',
-	'code_pen_id':'NPovad',
+	'title':'Making Reusable CSS Classes',
+	'description':'Demonstrates how to create reusable CSS classes (comes from Codepen user mandybee).',
+	'level': 'intermediate',
+	'code_pen_id':'EapyqV',
+	'user_name':'mandybee',
+	'votes':0
+},
+{
+	'title':'Making Shapes with CSS',
+	'description':'Shows how to make various shapes through clever use of borders and rotations.',
+	'level': 'intermediate',
+	'code_pen_id':'vEbWBp',
 	'user_name':'AndyAtUdacity',
 	'votes':0
 },
@@ -309,6 +317,14 @@ CODE_PENS = [
 	'description':'A table that breaks down the pros and cons of these three tools.',
 	'level': 'beginner',
 	'code_pen_id':'azYrBM',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+},
+{
+	'title':'Traffic Light Style Example #3',
+	'description':'This is just me having fun playing with CSS :)',
+	'level': 'intermediate',
+	'code_pen_id':'NPovad',
 	'user_name':'AndyAtUdacity',
 	'votes':0
 },
