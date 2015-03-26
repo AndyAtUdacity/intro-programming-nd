@@ -4,19 +4,33 @@
 <h1 class="title">Codepen Examples</h1>
 
 <div class="row">
-{% for example in examples %}
-
+{% for section in examples %}
+	<div class="section">
+		<a href="#section-{{ loop.index }}">
+			<h2>{{ section.title }}</h2>
+		</a>
+	</div>
+	{% for example in section.examples %}
 	<div class="table-of-contents-entry">
 		<a class="item-title" href="#{{ example.code_pen_id }}">
 			{{ example.title }}
 		</a>
 	</div>
 
+	{% endfor %}
 {% endfor %}
 </div>
 
+
 <div class="row cp-examples">
-	{% for ex in examples %}
+	{% for section in examples %}
+	<div id="section-{{ loop.index }}" class="col-12 section-title">
+		<h2>{{ section.title }}</h2>
+	</div>
+	<div class="section">
+		<p>{{ section.description }}</p>
+	</div>
+	{% for ex in section.examples %}
 	<div class="cp-example" id="{{ ex.code_pen_id }}">
 		<div class="alignment">
 			<div class="section cp-text">
@@ -31,6 +45,7 @@
 			<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 		</div>
 	</div>
+	{% endfor %}
 	{% endfor %}
 </div>
 

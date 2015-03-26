@@ -256,7 +256,39 @@ COURSES = [
 	}
 	]
 CODE_PENS = [
-{
+{'title': 'Project Examples',
+ 'description': """Examples of what your project may look like at various stages of the Nanodegree.""",
+ 'examples' : [
+ 	{
+	'title':'Stage 0',
+	'description':'HTML with <b>, <p>, and <em> tags.',
+	'level': 'beginner',
+	'code_pen_id':'ByVLVX',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+	},
+	{
+	'title':'Stage 1 Work Session 2',
+	'description':'Structured HTML (no CSS).',
+	'level': 'beginner',
+	'code_pen_id':'LEjWaj',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+	},
+	{
+	'title':'Stage 1 Complete',
+	'description':'Structured HTML with CSS styling.',
+	'level': 'beginner',
+	'code_pen_id':'KweNKa',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+	},
+ ]
+},
+{'title': 'Course Concepts',
+ 'description': """Demonstrations of various HTML and CSS concepts covered in Nanodegree courses.""",
+ 'examples' : [
+ 	{
 	'title':'Inline vs Block Demo',
 	'description':'A demonstration of various HTML elements to determine which are block-level and which are inline.',
 	'level': 'beginner',
@@ -271,62 +303,69 @@ CODE_PENS = [
 	'code_pen_id':'LEqLje',
 	'user_name':'AndyAtUdacity',
 	'votes':0
-},
-{
-	'title':'Stage 0 Example',
-	'description':'An example of HTML code with <b>, <p>, and <em> tags.',
-	'level': 'beginner',
-	'code_pen_id':'ByVLVX',
-	'user_name':'AndyAtUdacity',
-	'votes':0
-},
-{
+	},
+	{
 	'title':'Using Classes to Style Elements',
 	'description':'Simple traffic light demonstrates how to use classes to style certain elements.',
 	'level': 'beginner',
 	'code_pen_id':'OPdjXy',
 	'user_name':'AndyAtUdacity',
 	'votes':0
-},
-{
+	},
+	{
 	'title':'Multiple Classes on one Element',
 	'description':'More sophisticated traffic light example shows how to give a single element multiple classes.',
 	'level': 'intermediate',
 	'code_pen_id':'RNvZRX',
 	'user_name':'AndyAtUdacity',
 	'votes':0
-},
-{
+	},
+	{
 	'title':'Making Reusable CSS Classes',
 	'description':'Demonstrates how to create reusable CSS classes (comes from Codepen user mandybee).',
 	'level': 'intermediate',
 	'code_pen_id':'EapyqV',
 	'user_name':'mandybee',
 	'votes':0
+	},
+ ]
 },
-{
+{'title': 'Miscellaneous',
+ 'description': """HTML / CSS that's beyond what's covered in the Nanodegree or anything else.""",
+ 'examples' : [
+ 	{
 	'title':'Making Shapes with CSS',
 	'description':'Shows how to make various shapes through clever use of borders and rotations.',
 	'level': 'intermediate',
 	'code_pen_id':'vEbWBp',
 	'user_name':'AndyAtUdacity',
 	'votes':0
-},
-{
+	},
+	{
+	'title':'Nested Rows and Columns',
+	'description':'Shows behavior of nested rows and columns.',
+	'level': 'intermediate',
+	'code_pen_id':'LEqJaw',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+	},
+	{
 	'title':'Scratchpad vs. Codepen vs. Sublime',
 	'description':'A table that breaks down the pros and cons of these three tools.',
 	'level': 'beginner',
 	'code_pen_id':'azYrBM',
 	'user_name':'AndyAtUdacity',
 	'votes':0
-},
-{
+	},
+	{
 	'title':'Traffic Light Style Example #3',
 	'description':'This is just me having fun playing with CSS :)',
 	'level': 'intermediate',
 	'code_pen_id':'NPovad',
 	'user_name':'AndyAtUdacity',
 	'votes':0
+	},
+]
 },
 ]
 TOPICS = [
@@ -539,6 +578,33 @@ SECTIONS = [
 	 "short_title":"Codepens",
 	 "id"        : "codepen"
 	}]
+
+def get_application_id(url):
+	begin_app_id = url.find('http://') + 7
+	end_app_id = url.find('.appspot.com')
+	return url[begin_app_id : end_app_id]
+
+def is_submission_valid(student_name, description, url):
+	if len(student_name) < 2:
+		# Not a valid name if there's less than 2 letters
+		return False
+
+	if len(description) < 20:
+		# Description should be at least 20 letters
+		return False
+
+	if len(description) > 250:
+		# Description shouldn't be too long
+		return False
+
+	if url.find('.appspot.com') == -1:
+		# All submissions should be hosted on appspot.com
+		return False
+
+	# If none of the previous return statements have been triggered
+	# than this is a valid submission!
+	return True
+
 def guestbook_key(guestbook_name=DEFAULT_GUESTBOOK_NAME):
 	return ndb.Key('Guestbook', guestbook_name)
 
