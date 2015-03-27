@@ -334,6 +334,14 @@ CODE_PENS = [
  'description': """HTML / CSS that's beyond what's covered in the Nanodegree or anything else.""",
  'examples' : [
  	{
+	'title':'JavaScript Clickable Traffic Light',
+	'description':'Demonstrates some simple JavaScript.',
+	'level': 'intermediate',
+	'code_pen_id':'MYxWjY',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+	},
+ 	{
 	'title':'Making Shapes with CSS',
 	'description':'Shows how to make various shapes through clever use of borders and rotations.',
 	'level': 'intermediate',
@@ -358,10 +366,18 @@ CODE_PENS = [
 	'votes':0
 	},
 	{
-	'title':'Traffic Light Style Example #3',
-	'description':'This is just me having fun playing with CSS :)',
+	'title':'Drawing with CSS',
+	'description':'Warning: you will spend hours tweaking attribute values if you go down this road.',
 	'level': 'intermediate',
-	'code_pen_id':'NPovad',
+	'code_pen_id':'GgzVrK',
+	'user_name':'AndyAtUdacity',
+	'votes':0
+	},
+	{
+	'title':'RGB Playground',
+	'description':'Shows how different amounts of red, green, and blue can create colors.',
+	'level': 'intermediate',
+	'code_pen_id':'wBOBrG',
 	'user_name':'AndyAtUdacity',
 	'votes':0
 	},
