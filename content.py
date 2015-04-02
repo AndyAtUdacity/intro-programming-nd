@@ -285,7 +285,7 @@ CODE_PENS = [
 	},
  ]
 },
-{'title': 'Course Concepts',
+{'title': 'HTML and CSS Concepts',
  'description': """Demonstrations of various HTML and CSS concepts covered in Nanodegree courses.""",
  'examples' : [
  	{
