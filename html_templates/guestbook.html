@@ -9,11 +9,13 @@
 	<form action="add">
 		<button class="button button-secondary">Add Your Notes</button>
 	</form>
+	<hr>
 </div>
+
 <div class="row">
 {% for sub in submissions %}
 	{% if sub.image_url %}
-	<div class="panel" style="background-image: url({{ sub.image_url }})">
+	<div class="panel" style="background-image: url({{ sub.image_url }})" alt="">
 	{% else %}
 	<div class="panel">
 	{% endif %}
